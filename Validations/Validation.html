@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <h1 class="mb-4">Login Form</h1>
+    </div>
+
+    <script>
+        const handler = (event) => {
+            let no = parseInt(document.getElementById("cid").value);
+
+            let pass = document.getElementById("pid").value;
+
+            let repass = document.getElementById("rid").value;
+
+            console.log(pass);
+            console.log(repass);
+
+            if (!isNaN(no) || no < 1 || no > 10) {
+                alert("Phone Number not entered correctly");
+                return false;
+            }
+
+            if (pass != repass) {
+                alert("Password Doesnot Match please enter correct password");
+                return false;
+            }
+
+
+        }
+    </script>
+
+    <div style="display: flex; justify-content: center;" >
+        <form action="Welcome.html" class="bg-light p-5 rounded border">
+
+            Enter the FirstName:
+            <input type="text" id="fid" class="form-control mb-4"  placeholder="Enter the FirstName" required>
+            Enter the LastName: <input  class="form-control mb-4" type="text" id="lid" placeholder="Enter the LastName" required>
+            Enter the Email: <input  class="form-control mb-4" type="text" id="eid" placeholder="Enter the Email" required>
+            Enter Contact NO: <input  class="form-control mb-4" type="text" id="cid" placeholder="Enter the number" required>
+            Enter the Password: <input  class="form-control mb-4" type="password" id="pid" placeholder="Enter the Password" required
+                pattern="[A-Z a-z].{8,}">
+            Re-Enter The Password: <input  class="form-control mb-4" type="password" id="rid" placeholder="Re-Enter Password" required>
+
+            <button id="btn-id" class="btn btn-outline-danger me-3" onclick=" return handler()">Submit</button>
+            <button type="reset" id="btn-id1" class="btn btn-outline-info" >Reset</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
